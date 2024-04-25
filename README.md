@@ -9,12 +9,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  <h2 align="center">Mechty Learn App</h2>
   <a href="https://github.com/galveron/mechty-learn">
-    <img src="images/favicon.png" alt="Logo" width="80" height="80">
+    <img src="images/mechty-learn.png" alt="Screenshot" width="50%" height="50%">
   </a>
-
-  <h3 align="center">Mechty Learn App</h3>
-
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -43,8 +41,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]]("images/mecthy-learn.png")
 
 Mechty Learn is an engaging web application designed to introduce children to the exciting world of mechanics and vehicles. Built with ASP.NET Core, Identity Framework, AWS, and React, MechtyKids offers a modern and interactive learning experience for kids aged 6-12.
 
