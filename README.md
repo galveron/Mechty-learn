@@ -73,7 +73,7 @@ Key Features:
 
 This project is in progress. Here are the steps what I already done:
 
-* Create GitHub project
+* Create GitHub repository
 * Create visual plans
 * Create test for 3d implementiation with THREE.js
 
