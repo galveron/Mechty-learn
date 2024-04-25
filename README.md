@@ -9,11 +9,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/galveron/Musicly-project">
+  <a href="https://github.com/galveron/mechty-learn">
     <img src="images/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Musicly app</h3>
+  <h3 align="center">Mechty Learn App</h3>
 
 </div>
 
@@ -25,6 +25,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#progress">Progress</a></li>
       </ul>
     </li>
     <li>
@@ -35,7 +36,6 @@
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -59,14 +59,23 @@ Key Features:
 
 ### Built With
 
-* [![Express][Express.js]][Express-url]
+* [![Asp.netCore][Asp.netCore]][Asp.netCore-url]
+* [![Aws][Aws]][Aws-url]
+* [![Azure][Azure]][Azure-url]
 * [![React][React.js]][React-url]
-* [![Mongoose][Mongoose.com]][Mongoose-url]
+* [![Three][Three.js]][Three.js-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<a name="progress"></a>
+### Progress
 
+This project is in progress. Here are the steps what I already done:
+
+* Create GitHub project
+* Create visual plans
+* Create test for 3d implementiation with THREE.js
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -104,18 +113,22 @@ Project Link: [https://github.com/galveron/mechty-learn](https://github.com/galv
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[progress-shield]: https://img.shields.io/badge/Progress-8B0000?style=for-the-badge&logo=data:image/svg%2bxml;base64,aHR0cHM6Ly9zdGF0aWMudGhlbm91bnByb2plY3QuY29tL3BuZy8zMDM5Mjk2LTIwMC5wbmc=
-[progress-url]: https://github.com/galveron/Musicly-project/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/galveron/Musicly-project.svg?style=for-the-badge&colorB=FFC300
-[issues-url]: https://github.com/galveron/Musicly-project/issues
+[progress-shield]: https://img.shields.io/badge/In-Progress-8B0000.svg?style=for-the-badge
+[progress-url]: https://github.com/galveron/mechty-learn/blob/main/README.md#progress
+[issues-shield]: https://img.shields.io/github/issues/galveron/mechty-learn.svg?style=for-the-badge&colorB=FFC300
+[issues-url]: https://github.com/galveron/mechty-learn/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=0096FF
 [linkedin-url]: https://linkedin.com/in/veron-gal
-[product-screenshot]: images/musicly-screenshot.png
-[Express.js]: https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=expressjs&logoColor=white
-[Express-url]: https://expressjs.com/
+[product-screenshot]: images/mecthy-screenshot.png
+[Asp.netCore]: https://img.shields.io/badge/ASP.NET_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white
+[Asp.netCore-url]: https://dotnet.microsoft.com/en-us/apps/aspnet
+[Aws]:https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white
+[Aws-url]:https://aws.amazon.com/?nc2=h_lg
+[Azure]:https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white
+[Azure-url]: https://azure.microsoft.com/en-us/free/search/?ef_id=_k_Cj0KCQjw_qexBhCoARIsAFgBlesj4zlpsF7CRNapEj4KFOyaQQQK_h9AJYF9m3mRFpVk_VZLzcc9OXcaAu0YEALw_wcB_k_&OCID=AIDcmmip7xznjm_SEM__k_Cj0KCQjw_qexBhCoARIsAFgBlesj4zlpsF7CRNapEj4KFOyaQQQK_h9AJYF9m3mRFpVk_VZLzcc9OXcaAu0YEALw_wcB_k_&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBlesj4zlpsF7CRNapEj4KFOyaQQQK_h9AJYF9m3mRFpVk_VZLzcc9OXcaAu0YEALw_wcB
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Mongoose.com]: https://img.shields.io/badge/mongoose-8B0000?style=for-the-badge&logo=mongoose&logoColor=white
-[Mongoose-url]: https://mongoosejs.com/
+[Three.js]: https://img.shields.io/badge/THREE.js-000000?style=for-the-badge&logo=threedotjs&logoColor=61DAFB
+[Three.js-url]: https://threejs.org/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
