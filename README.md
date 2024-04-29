@@ -48,6 +48,7 @@ Key Features:
 
 * Interactive Lessons: Engaging lessons and tutorials teach kids the basics of mechanics, vehicles, and engineering concepts in a fun and easy-to-understand way.
 * User Authentication: Secure user authentication and management powered by ASP.NET Core Identity Framework ensure a safe and personalized learning environment for each child.
+* Multiplayer: Step-by-step projects and activities allow kids to apply what they've learned, fostering creativity and problem-solving skills especially when they can compare their knowledge with others
 * Scalable Infrastructure: Leveraging AWS for hosting and storage, Mechty Learn provides a reliable and scalable platform to accommodate growing user demands.
 * Responsive Design: Built with React, Mechty Learn is accessible on various devices, including desktops, tablets, and smartphones, ensuring seamless learning experiences anytime, anywhere.
 
@@ -71,8 +72,13 @@ Key Features:
 This project is in progress. Here are the steps what I already done:
 
 * Create GitHub repository
+* Create GitHub project
 * Create visual plans
 * Create test for 3d implementiation with THREE.js
+* Discuss my plans with a mentor
+
+If you are interested in what I am currently working on, you can check the open issues: 
+[https://github.com/galveron/mechty-learn/issues](https://github.com/galveron/mechty-learn/issues)
 
 <!-- GETTING STARTED -->
 ## Getting Started
