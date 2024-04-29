@@ -42,14 +42,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Mechty Learn is an engaging web application designed to introduce children to the exciting world of mechanics and vehicles. Built with ASP.NET Core, Identity Framework, AWS, and React, MechtyKids offers a modern and interactive learning experience for kids aged 6-12.
+Mechty Learn is an engaging web application designed to introduce children to the exciting world of mechanics and vehicles. Built with ASP.NET Core, Identity Framework, AWS, and React, Mechty Learn offers a modern and interactive learning experience for kids aged 6-12.
 
 Key Features:
 
 * Interactive Lessons: Engaging lessons and tutorials teach kids the basics of mechanics, vehicles, and engineering concepts in a fun and easy-to-understand way.
 * User Authentication: Secure user authentication and management powered by ASP.NET Core Identity Framework ensure a safe and personalized learning environment for each child.
-* Scalable Infrastructure: Leveraging AWS for hosting and storage, MechtyKids provides a reliable and scalable platform to accommodate growing user demands.
-* Responsive Design: Built with React, MechtyKids is accessible on various devices, including desktops, tablets, and smartphones, ensuring seamless learning experiences anytime, anywhere.
+* Scalable Infrastructure: Leveraging AWS for hosting and storage, Mechty Learn provides a reliable and scalable platform to accommodate growing user demands.
+* Responsive Design: Built with React, Mechty Learn is accessible on various devices, including desktops, tablets, and smartphones, ensuring seamless learning experiences anytime, anywhere.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,7 +60,8 @@ Key Features:
 * [![Azure][Azure]][Azure-url]
 * [![React][React.js]][React-url]
 * [![Three][Three.js]][Three.js-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![TypeScript][TypeScript]][TypeScript-url]
+* [![Socket.io][Socket.io]][Socket.io-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,5 +127,7 @@ Project Link: [https://github.com/galveron/mechty-learn](https://github.com/galv
 [React-url]: https://reactjs.org/
 [Three.js]: https://img.shields.io/badge/THREE.js-000000?style=for-the-badge&logo=threedotjs&logoColor=61DAFB
 [Three.js-url]: https://threejs.org/
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
+[TypeScript]: https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[Socket.io]: https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white
+[Socket.io-url]: https://socket.io/
