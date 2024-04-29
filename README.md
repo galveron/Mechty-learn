@@ -112,7 +112,7 @@ Project Link: [https://github.com/galveron/mechty-learn](https://github.com/galv
 <!-- MARKDOWN LINKS & IMAGES -->
 [progress-shield]: https://img.shields.io/badge/In-Progress-8B0000.svg?style=for-the-badge
 [progress-url]: https://github.com/galveron/mechty-learn/blob/main/README.md#progress
-[issues-shield]: https://img.shields.io/github/issues/galveron/mechty-learn.svg?style=for-the-badge&colorB=FFC300
+[issues-shield]: https://img.shields.io/github/issues/galveron/mechty-learn.svg?style=for-the-badge
 [issues-url]: https://github.com/galveron/mechty-learn/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=0096FF
 [linkedin-url]: https://linkedin.com/in/veron-gal
