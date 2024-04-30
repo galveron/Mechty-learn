@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Mechty_learn_backend.Models;
 
-public class Kid : IdentityUser
+public class Kid
 {
+    public string Id; //Adult id + kid name
+    public string Name;
     public int Score = 0;
     public Progress KidProgress = Progress.zero;
     public User3DIcon Icon;
