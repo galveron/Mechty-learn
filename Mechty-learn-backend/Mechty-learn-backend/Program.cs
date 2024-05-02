@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
+using Mechty_learn_backend.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -20,7 +21,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext>((options) =>
+builder.Services.AddTransient<IKidsRepository, KidsRepository>();
+builder.Services.AddTransient<IAdultsRepository, AdultsRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>((container, options) =>
     options.UseSqlServer(config["ConnectionString"]));
 
 AddCors();
