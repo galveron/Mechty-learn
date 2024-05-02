@@ -1,7 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Mechty_learn_backend.Models;
 
 public class ChapterPageSound
 {
-    public int Id;
-    public string ChapterPageSoundUrl;
+    public int Id { get; set; }
+    public string ChapterPageSoundUrl { get; set; }
 }
