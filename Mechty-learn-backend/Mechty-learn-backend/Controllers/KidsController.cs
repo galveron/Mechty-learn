@@ -19,23 +19,23 @@ public class KidsController : ControllerBase
     }
 
     [HttpPost("AddKidByAdultId")]
-    public async Task<ActionResult> AddKidByAdultId( string adultId, string kidName)
+    public async Task<ActionResult> AddKidByAdultId( string adultId, string kidName, int kidIconId)
     {
         
-        var result = await _kidsRepository.AddKid(kidName, adultId);
+        var result = await _kidsRepository.AddKid(kidName, adultId, kidIconId);
 
         return result == null ? Problem("Error in AC 03") : Ok(result);
     }
     
     [HttpPost("AddKidByAdultName")]
-    public async Task<ActionResult> AddKidByAdultName( string adultName, string kidName)
+    public async Task<ActionResult> AddKidByAdultName( string adultName, string kidName, int kidIconId)
     {
         var adult = await _adultsRepository.GetAdultByName(adultName);
         if (adult == null)
         {
             return Problem("Error in AC 04");
         }
-        var result = await _kidsRepository.AddKid(kidName, adult.Id);
+        var result = await _kidsRepository.AddKid(kidName, adult.Id, kidIconId);
 
         return result == null ? Problem("Error in AC 05"): Ok(result);
     }
