@@ -23,6 +23,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IKidsRepository, KidsRepository>();
 builder.Services.AddTransient<IAdultsRepository, AdultsRepository>();
+builder.Services.AddTransient<ILessonRepository, LessonRepository>();
+builder.Services.AddTransient<IChapterRepository, ChapterRepository>();
+builder.Services.AddTransient<IChapterPageRepository, ChapterPageRepository>();
+builder.Services.AddTransient<IChapterPageSoundRepository, ChapterPageSoundRepository>();
+builder.Services.AddTransient<IChapterPageTextRepository, ChapterPageTextRepository>();
+builder.Services.AddTransient<IChapterPage3DModeRepository, ChapterPage3DModelRepository>();
+builder.Services.AddTransient<IProgressRepository, ProgressRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>((container, options) =>
     options.UseSqlServer(config["ConnectionString"]));
 
