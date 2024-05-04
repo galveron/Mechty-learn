@@ -71,11 +71,10 @@ Key Features:
 
 This project is in progress. Here are the steps what I already done:
 
-* Create GitHub repository
-* Create GitHub project
-* Create visual plans
-* Create test for 3d implementiation with THREE.js
-* Discuss my plans with a mentor
+* Planning, decide technics, discuss plans with mentor
+* Set up backend
+* Create database with Entity Framework Core
+* Create main controller and repository methods
 
 If you are interested in what I am currently working on, you can check the open issues: 
 [https://github.com/galveron/mechty-learn/issues](https://github.com/galveron/mechty-learn/issues)
