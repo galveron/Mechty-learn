@@ -1,11 +1,15 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mechty_learn_backend.Models;
 
+[PrimaryKey(nameof(Id), nameof(ChapterId))]
 public class ChapterPage
 {
-    public int Id { get; set; }
-    public ChapterPage3DModel ChapterPage3DModel { get; set; }
-    public ChapterPageText ChapterPageText { get; set; }
-    public ChapterPageSound ChapterPageSound { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; init; }
+    public int ChapterId { get; init; }
+    
+    public string? ChapterPageTitle { get; init; }
+    public string? ChapterPageDescription { get; init; }
 }
