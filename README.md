@@ -29,8 +29,9 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
+        <li><a href="#frontend">Check my frontend</a></li>
+        <li><a href="#backend">Check my backend</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -85,27 +86,47 @@ This project is in progress. Here are the steps what I already done:
 If you are interested in what I am currently working on, you can check the open issues: 
 [https://github.com/galveron/mechty-learn/issues](https://github.com/galveron/mechty-learn/issues)
 
+<a name="getting-started"></a>
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To try out our application, please follow the next steps:
 
-### Prerequisites
+<!-- ### Prerequisites
 
 * npm
   ```sh
   npm install
   ```
+-->
 
-### Installation
+<a name="frontend"></a>
+### Check my frontend
 
-1. Clone the repo
+1. Download or clone the repo.
+   To clone: 
    ```sh
    git clone https://github.com/galveron/mechty-learn
    ```
+2. Install npm pacakges
+   ```sh
+   npm install
+   ```
+3. Change directory
+   ```sh
+   cd ../Mechty-learn/Mechty-learn-frontend
+   ```
+4. Start frontend
+   ```sh
+   npm run dev
+   ```
+5. Open 'http://localhost:5019' in your browser
+
+   WARNING!
+   This project is still in development. If you are interested in what I get done already or what I am wokring on right now click here:
+    <a href="#progress">Progress</a>
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
