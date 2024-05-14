@@ -63,6 +63,7 @@ Key Features:
 * [![Three][Three.js]][Three.js-url]
 * [![TypeScript][TypeScript]][TypeScript-url]
 * [![Socket.io][Socket.io]][Socket.io-url]
+* 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,6 +76,11 @@ This project is in progress. Here are the steps what I already done:
 * Set up backend
 * Create database with Entity Framework Core
 * Create main controller and repository methods
+
+* Create frontend base
+* Learn about TypeScript and Sass
+* Create a good structure on frontend
+* Create Home page structure
 
 If you are interested in what I am currently working on, you can check the open issues: 
 [https://github.com/galveron/mechty-learn/issues](https://github.com/galveron/mechty-learn/issues)
@@ -134,5 +140,7 @@ Project Link: [https://github.com/galveron/mechty-learn](https://github.com/galv
 [Three.js-url]: https://threejs.org/
 [TypeScript]: https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [TypeScript-url]: https://www.typescriptlang.org/
+[Sass]: https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[Sass-url]: https://sass-lang.com/
 [Socket.io]: https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white
 [Socket.io-url]: https://socket.io/
