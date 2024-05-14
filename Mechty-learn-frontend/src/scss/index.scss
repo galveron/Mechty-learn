@@ -1,0 +1,21 @@
+/* Table of contents
+--------------------------------------------
+-- components imports
+-- layout imports
+-- pages imports
+
+/* components import*/
+@use './components/header';
+@use './components/navbar';
+@use './components/buttons';
+@use './components/progress-bar';
+@use './components/card';
+@use './components/article';
+
+/*layout import*/
+
+@use './layout/layout';
+
+/*pages import*/
+
+@use './pages/home'
