@@ -31,7 +31,6 @@
       <ul>
         <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
         <li><a href="#frontend">Check my frontend</a></li>
-        <li><a href="#backend">Check my backend</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
