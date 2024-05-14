@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+
+progress {
+    box-sizing: border-box;
+    min-height: 20%;
+    min-width: 100%;
+    border-radius: 0.8em;
+    background-color: #ffffff;
+
+    &::-webkit-progress-bar {
+        background-color: #ffffff;
+        border-radius: 0.8em;
+    }
+
+    &::-webkit-progress-value {
+        background-color: $primary-pink;
+        border-radius: 0.8em;
+    }
+
+    &::-moz-progress-bar {
+        background-color: $primary-pink;
+    }
+}
+
+#in-progress {
+    &::-webkit-progress-bar {
+        background-color: #ffffff;
+        border-radius: 0.8em;
+    }
+}
+
+#out-progress {
+    &::-webkit-progress-bar {
+        background-color: $primary-violet;
+        border-radius: 0.8em;
+    }
+}

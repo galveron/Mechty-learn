@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@mixin primary-button {
+    @include unbuttonize;
+    border-radius: 0.6em;
+    padding: 0.4rem;
+    padding-inline: 2rem;
+    color: $primary-yellow;
+    font-size: 80%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    margin-inline: 0.5rem;
+
+    &:hover {
+        background-color: $primary-yellow;
+    }
+}
+
+@mixin primary-button-pink {
+    @include primary-button;
+    background-color: $primary-pink;
+
+    &:hover {
+        color: $primary-pink;
+    }
+}
+
+@mixin primary-button-blue {
+    @include primary-button;
+    background-color: $primary-violet;
+
+    &:hover {
+        color: $primary-violet;
+    }
+}

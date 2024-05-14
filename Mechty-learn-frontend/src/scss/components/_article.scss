@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as *;
+@use '../base/typograhpy' as *;
+
+
+@mixin article-base {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-top: 2em;
+    //min-height: 8em;
+    border-radius: 0.8em;
+}
+
+@mixin article3d-base {
+    min-width: 30%;
+}
+
+@mixin article-description-base {
+    display: flex;
+    flex-direction: column;
+    margin: 4%;
+}
+
+@mixin article-title-base {
+    margin: 0;
+    margin-bottom: 1em;
+    @include league-spartan-bold-blue;
+}
+
+@mixin article-text-base {
+    @include league-spartan-normal-blue;
+}
+
+
+//article-left
+
+.article-left {
+    @include article-base
+}
+
+.article3d-left {
+    @include article3d-base;
+    border-radius: 0.8em 0 0 0.8em;
+    background-color: $primary-blue;
+}
+
+.article-description-left {
+    @include article-description-base
+}
+
+.article-title-left {
+    @include article-title-base;
+}
+
+.article-text-left {
+    @include article-text-base;
+}
+
+
+//article-right
+
+.article-right {
+    @include article-base
+}
+
+.article3d-right {
+    @include article3d-base;
+    border-radius: 0 0.8em 0.8em 0;
+    background-color: $primary-blue;
+}
+
+.article-description-right {
+    @include article-description-base
+}
+
+.article-title-right {
+    @include article-title-base;
+}
+
+.article-text-right {
+    @include article-text-base;
+}

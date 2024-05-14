@@ -1,0 +1,9 @@
+@use '../base/typograhpy' as *;
+
+.home-section {
+    @include league-spartan-bold-blue;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    margin-top: 3%;
+}

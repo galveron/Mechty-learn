@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *;
+@use '../base/typograhpy' as *;
+@use '../components/buttons' as *;
+@use '../abstracts/mixins' as *;
+
+#user-name {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    margin-inline: 0.5em;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background-color: $primary-blue;
+    max-height: 40%;
+    border-radius: 0.8em;
+    padding: 0.4em;
+    padding-inline: 0.5em;
+    @include league-spartan-bold-yellow;
+}
+
+.register-btn {
+    @include primary-button-pink;
+}
+
+.signin-btn {
+    @include primary-button-blue;
+}
