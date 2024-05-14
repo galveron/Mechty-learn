@@ -119,7 +119,7 @@ To try out our application, please follow the next steps:
    ```sh
    npm run dev
    ```
-5. Open 'http://localhost:5019' in your browser
+5. Open 'http://localhost:8080' in your browser
 
    WARNING!
    This project is still in development. If you are interested in what I get done already or what I am wokring on right now click here:
