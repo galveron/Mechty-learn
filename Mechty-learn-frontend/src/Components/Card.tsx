@@ -7,7 +7,7 @@ function Card(props: CardTitle) {
         <>
             <div className="card">
                 <div className="card3d">kép</div>
-                <h3 id="card-label">{props.title}</h3>
+                <h5 id="card-label">{props.title}</h5>
             </div>
         </>)
 }
