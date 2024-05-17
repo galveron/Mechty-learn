@@ -10,3 +10,32 @@
     border-radius: 0;
     appearance: none;
 }
+
+@mixin box-base {
+    display: flex;
+    flex-direction: column;
+    min-height: 8em;
+    border-radius: 0.8em;
+    padding: 0.6em;
+    align-items: center;
+    margin-top: 0.8em;
+}
+
+@mixin two-column-grid-base {
+    display: grid;
+    gap: 1em;
+    grid-template-columns:
+        minmax(0, 1fr) minmax(0, 3fr);
+}
+
+@mixin input-base {
+    min-width: 60%;
+    background-color: $primary-yellow;
+    border-radius: 0.8em;
+    border-style: none;
+    min-height: 3em;
+    color: $primary-pink;
+    font-size: large;
+    text-align: center;
+    font-weight: bold;
+}
