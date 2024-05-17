@@ -2,17 +2,23 @@ import { Outlet } from "react-router-dom"
 import './scss/layout/_layout.scss'
 import Logo from './Components/Logo'
 import Navbar, { UserName } from './Components/Navbar';
-import ProgressBar, { UserModel } from "./Components/ProgressBar";
+import ProgressBar, { UserProgress } from "./Components/ProgressBar";
 
-function Layout() {
+export interface User {
+    userName?: string,
+    userId?: string,
+    userEmail?: string,
+    userProgress?: number
+}
+
+function Layout({ userName, userProgress }: User) {
     //let userName: string = "Senki";
-    const user: UserModel = {
-        userName: "senki",
-        userProgress: 0
+    const progress: UserProgress = {
+        progress: userProgress,
     }
 
     const name: UserName = {
-        userName: ""
+        userName: userName
     }
 
     return (
@@ -21,7 +27,7 @@ function Layout() {
                 <Logo />
                 <nav>
                     <Navbar userName={name.userName} />
-                    <ProgressBar user={user} />
+                    <ProgressBar progress={progress.progress} />
                 </nav>
             </header>
             <div className="outlet">
