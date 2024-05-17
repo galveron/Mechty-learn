@@ -1,14 +1,10 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 
 .card {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    min-height: 8em;
-    border-radius: 0.8em;
-    padding: 0.6em;
-    align-items: center;
+    @include box-base;
+    background-color: $primary-white;
 }
 
 .card3d {
