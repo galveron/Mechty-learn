@@ -33,12 +33,10 @@ builder.Services.AddTransient<IProgressRepository, ProgressRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>((container, options) =>
     options.UseSqlServer(config["ConnectionString"]));
 
-AddCors();
 AddIdentity();
 
 var app = builder.Build();
 
-app.UseCors("MyAllowSpecificOrigins");
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -77,31 +75,6 @@ void ConfigureSwagger()
                 new string[] { }
             }
         });
-    });
-}
-
-void AddCors()
-{
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy(name: "MyAllowSpecificOrigins",
-            policy  =>
-            {
-                policy
-                    //.WithOrigins("*") //doesn't work with credentials included
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowCredentials()
-                    .SetIsOriginAllowed(origin =>
-                    {
-                        if (string.IsNullOrWhiteSpace(origin)) return false;
-                        // Only add this to allow testing with localhost, remove this line in production!
-                        if (origin.ToLower().StartsWith("http://localhost")) return true;
-                        // Insert your production domain here.
-                        if (origin.ToLower().StartsWith("https://dev.mydomain.com")) return true;
-                        return false;
-                    });
-            });
     });
 }
 
