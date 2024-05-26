@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Mechty_learn_backend.Repositories;
+using Mechty_learn_backend.Repositories.EducationRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -11,7 +12,8 @@ var config =
         .Build();
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = config["ConnectionString"] ?? Environment.GetEnvironmentVariable("CONNECTIONSTRING");
+Console.WriteLine(Environment.GetEnvironmentVariable("DB"));
 ConfigureSwagger();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -30,8 +32,10 @@ builder.Services.AddTransient<IChapterPageSoundRepository, ChapterPageSoundRepos
 builder.Services.AddTransient<IChapterPageTextRepository, ChapterPageTextRepository>();
 builder.Services.AddTransient<IChapterPage3DModeRepository, ChapterPage3DModelRepository>();
 builder.Services.AddTransient<IProgressRepository, ProgressRepository>();
-builder.Services.AddDbContext<ApplicationDbContext>((container, options) =>
-    options.UseSqlServer(config["ConnectionString"]));
+builder.Services.AddDbContext<ApplicationDbContext>((options) =>
+    options.UseSqlServer(connectionString));
+Console.WriteLine(connectionString);
+
 
 AddIdentity();
 
