@@ -1,5 +1,5 @@
 export interface UserName {
-    userName: string;
+    userName?: string;
 }
 
 function Navbar(props: UserName) {

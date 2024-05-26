@@ -1,5 +1,13 @@
 @use '../abstracts/variables' as *;
 
+@mixin league-spartan-bold {
+    font-family: "League Spartan";
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3vw;
+}
+
 @mixin league-spartan-bold-yellow {
     font-family: "League Spartan";
     font-optical-sizing: auto;
@@ -25,4 +33,13 @@
     color: $primary-blue;
     font-style: normal;
     font-size: 2.5vw;
+}
+
+@mixin league-spartan-bold-h1-violet {
+    font-family: "League Spartan";
+    font-optical-sizing: auto;
+    font-weight: 700;
+    color: $primary-violet;
+    font-style: normal;
+    font-size: 5vw;
 }

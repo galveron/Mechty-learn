@@ -1,17 +1,13 @@
 
-export type UserModel = {
-    userName: string;
-    userProgress: number;
+
+export interface UserProgress {
+    progress?: number;
 }
 
-interface UserProps {
-    user: UserModel;
-}
-
-function ProgressBar(props: UserProps) {
+function ProgressBar(props: UserProgress) {
     return (
-        <>{props.user.userProgress ?
-            <progress id="in-progress" value={props.user.userProgress} max="100" />
+        <>{props.progress ?
+            <progress id="in-progress" value={props.progress} max="100" />
             : <progress id="out-progress" value="0" max="100" />
         }
         </>

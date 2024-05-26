@@ -1,20 +1,24 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+@use '../base/typograhpy' as *;
 
 @mixin primary-button {
     @include unbuttonize;
     border-radius: 0.6em;
-    padding: 0.4rem;
+    padding: 0.3em;
     padding-inline: 2rem;
     color: $primary-yellow;
     font-size: 80%;
     min-height: 100%;
+    min-width: 5em;
     display: flex;
     align-items: center;
     margin-inline: 0.5rem;
+    justify-content: center;
 
     &:hover {
         background-color: $primary-yellow;
+        cursor: pointer;
     }
 }
 
@@ -27,9 +31,18 @@
     }
 }
 
-@mixin primary-button-blue {
+@mixin primary-button-violet {
     @include primary-button;
     background-color: $primary-violet;
+
+    &:hover {
+        color: $primary-violet;
+    }
+}
+
+@mixin primary-button-blue {
+    @include primary-button;
+    background-color: $primary-blue;
 
     &:hover {
         color: $primary-violet;
