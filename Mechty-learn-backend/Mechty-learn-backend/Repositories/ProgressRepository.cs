@@ -20,7 +20,7 @@ public class ProgressRepository : IProgressRepository
 
         if (kid == null || lesson == null)
         {
-            throw new Exception("Error in PR 01");
+            return null;
         }
         
         var lessonProgress = new LessonProgress()
@@ -39,24 +39,19 @@ public class ProgressRepository : IProgressRepository
             var newLessonProgress = 
                 await _dbContext.LessonProgresses.FirstOrDefaultAsync(lp => lp.KidId == kidId && lp.LessonId == lessonId);
 
-            return newLessonProgress.Id;
+            return newLessonProgress?.Id;
         }
         catch
         {
-            throw new Exception("Error in PR 02");
+            return null;
         }
     }
 
-    public async Task<LessonProgress> GetLessonProgress(string kidId, int lessonId)
+    public async Task<LessonProgress?> GetLessonProgress(string kidId, int lessonId)
     {
         var lessonProgress =
             await _dbContext.LessonProgresses.FirstOrDefaultAsync(l => l.KidId == kidId && l.LessonId == lessonId);
-        if (lessonProgress == null)
-        {
-            throw new Exception("Error in PR 03");
-        }
-
-        return lessonProgress;
+        return lessonProgress ?? null;
     }
     
     public async Task<int?> CreateChapterProgress(string kidId, int chapterId)
@@ -66,7 +61,7 @@ public class ProgressRepository : IProgressRepository
 
         if (kid == null || chapter == null)
         {
-            throw new Exception("Error in PR 04");
+            return null;
         }
         
         var chapterProgress = new ChapterProgress()
@@ -85,32 +80,27 @@ public class ProgressRepository : IProgressRepository
             var newChapterProgress = 
                 await _dbContext.ChapterProgresses.FirstOrDefaultAsync(cp => cp.KidId == kidId && cp.ChapterId == chapterId);
 
-            return newChapterProgress.Id;
+            return newChapterProgress?.Id;
         }
         catch
         {
-            throw new Exception("Error in PR 05");
+            return null;
         }
     }
-    public async Task<ChapterProgress> GetChapterProgress(string kidId, int chapterId)
+    public async Task<ChapterProgress?> GetChapterProgress(string kidId, int chapterId)
     {
         var chapterProgress =
             await _dbContext.ChapterProgresses.FirstOrDefaultAsync(p => p.KidId == kidId && p.ChapterId == chapterId);
-        if (chapterProgress == null)
-        {
-            throw new Exception("Error in PR 06");
-        }
-
-        return chapterProgress;
+        return chapterProgress ?? null;
     }
     
-    public async Task<LessonProgress> UpdateLessonProgress(string kidId, int lessonId, Progress progress)
+    public async Task<LessonProgress?> UpdateLessonProgress(string kidId, int lessonId, Progress progress)
     {
         var lessonProgress =
             await _dbContext.LessonProgresses.FirstOrDefaultAsync(l => l.KidId == kidId && l.LessonId == lessonId);
         if (lessonProgress == null)
         {
-            throw new Exception("Error in PR 03");
+            return null;
         }
 
         try
@@ -120,27 +110,22 @@ public class ProgressRepository : IProgressRepository
         }
         catch
         {
-            throw new Exception("Error in PR 04");
+            return null;
         }
 
         var updatedLessonProgress = 
             await _dbContext.LessonProgresses.FirstOrDefaultAsync(l => l.KidId == kidId && l.LessonId == lessonId);
 
-        if (updatedLessonProgress == null)
-        {
-            throw new Exception("Error in PR 05");
-        }
-        
-        return updatedLessonProgress;
+        return updatedLessonProgress ?? null;
     }
     
-    public async Task<ChapterProgress> UpdateChapterProgress(string kidId, int chapterId, Progress progress)
+    public async Task<ChapterProgress?> UpdateChapterProgress(string kidId, int chapterId, Progress progress)
     {
         var chapterProgress =
             await _dbContext.ChapterProgresses.FirstOrDefaultAsync(l => l.KidId == kidId && l.ChapterId == chapterId);
         if (chapterProgress == null)
         {
-            throw new Exception("Error in PR 06");
+            return null;
         }
 
         try
@@ -150,17 +135,12 @@ public class ProgressRepository : IProgressRepository
         }
         catch
         {
-            throw new Exception("Error in PR 07");
+            return null;
         }
 
         var updatedChapterProgress = 
             await _dbContext.ChapterProgresses.FirstOrDefaultAsync(l => l.KidId == kidId && l.ChapterId == chapterId);
 
-        if (updatedChapterProgress == null)
-        {
-            throw new Exception("Error in PR 08");
-        }
-        
-        return updatedChapterProgress;
+        return updatedChapterProgress ?? null;
     }
 }

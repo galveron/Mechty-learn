@@ -16,7 +16,7 @@ public class AdultsRepository : IAdultsRepository
         _dbContext = dbContext;
     }
 
-    public async Task<string> AddAdult(string userName, string email, string password, int adultIconId)
+    public async Task<string?> AddAdult(string userName, string email, string password, int? adultIconId)
     {
         var adultFromDb1 = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == userName);
         var adultFromDb2 = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == email);
@@ -36,7 +36,13 @@ public class AdultsRepository : IAdultsRepository
         }
 
         var newAdult = _userManager.Users.First(u => u.UserName == userName);
+        
+        if (adultIconId == null) return newAdult.Id;
+        
         var adults3dIcon = await _dbContext.Adults3DModels.FirstOrDefaultAsync(e => e.Id == adultIconId);
+        
+        if (adults3dIcon == null) return newAdult.Id;
+        
         adults3dIcon.Adults.Add(newAdult);
         _dbContext.Update(adults3dIcon);
 

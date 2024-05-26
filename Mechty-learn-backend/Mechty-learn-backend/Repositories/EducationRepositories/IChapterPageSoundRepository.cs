@@ -5,5 +5,5 @@ namespace Mechty_learn_backend.Repositories;
 public interface IChapterPageSoundRepository
 {
     Task<int?> CreateChapterPageSound(string chapterPageSoundUrl, int chapterPageId);
-    Task<ChapterPageSound> GetChapterPageSoundById(int chapterPageSoundId);
+    Task<ChapterPageSound?> GetChapterPageSoundById(int chapterPageSoundId);
 }

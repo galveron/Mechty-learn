@@ -2,7 +2,7 @@ using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mechty_learn_backend.Repositories;
+namespace Mechty_learn_backend.Repositories.EducationRepositories;
 
 public class ChapterPageRepository : IChapterPageRepository
 {
@@ -28,22 +28,13 @@ public class ChapterPageRepository : IChapterPageRepository
 
         var newChapterPage = await _dbContext.ChapterPages.FirstOrDefaultAsync(c => c.ChapterPageTitle == chapterPageTitle);
 
-        if (newChapterPage == null)
-        {
-            throw new Exception("Error in CPR 01");
-        }
-        return newChapterPage.Id;
+        return newChapterPage?.Id;
     }
     
-    public async Task<ChapterPage> GetChapterPageById(int chapterPageId)
+    public async Task<ChapterPage?> GetChapterPageById(int chapterPageId)
     {
         var chapterPage = await _dbContext.ChapterPages.FirstOrDefaultAsync(c => c.Id == chapterPageId);
 
-        if (chapterPage == null)
-        {
-            throw new Exception("Error in CPR 02");
-        }
-
-        return chapterPage;
+        return chapterPage ?? null;
     }
 }

@@ -2,7 +2,7 @@ using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mechty_learn_backend.Repositories;
+namespace Mechty_learn_backend.Repositories.EducationRepositories;
 
 public class ChapterPageTextRepository : IChapterPageTextRepository
 {
@@ -26,7 +26,7 @@ public class ChapterPageTextRepository : IChapterPageTextRepository
         
         if (chapterPage == null)
         {
-            throw new Exception("Error in CPTR 01");
+            return null;
         }
         
         var chapterPageText = new ChapterPageText() {ChapterPageId = chapterPageId, ChapterPageTextUrl = chapterPageTextUrl, ChapterPage = chapterPage};
@@ -35,22 +35,13 @@ public class ChapterPageTextRepository : IChapterPageTextRepository
 
         var newChapterPageText = await _dbContext.ChapterPageTexts.FirstOrDefaultAsync(c => c.ChapterPageId == chapterPageId);
 
-        if (newChapterPageText == null)
-        {
-            throw new Exception("Error in CPTR 02");
-        }
-        return newChapterPageText.Id;
+        return newChapterPageText?.Id;
     }
     
-    public async Task<ChapterPageText> GetChapterPageTextById(int chapterPageTextId)
+    public async Task<ChapterPageText?> GetChapterPageTextById(int chapterPageTextId)
     {
         var chapterPageText = await _dbContext.ChapterPageTexts.FirstOrDefaultAsync(c => c.Id == chapterPageTextId);
 
-        if (chapterPageText == null)
-        {
-            throw new Exception("Error in CPTR 03");
-        }
-
-        return chapterPageText;
+        return chapterPageText ?? null;
     }
 }

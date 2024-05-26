@@ -42,6 +42,8 @@ public class KidsRepository : IKidsRepository
             var newKid = await _dbContext.Kids.FirstOrDefaultAsync(k => k.Name == name);
             
             var kids3dIcon = await _dbContext.Kids3DModels.FirstOrDefaultAsync(e => e.Id == kidIconId);
+            
+            if(kids3dIcon == null || newKid == null) return result.Entity.Id;
             kids3dIcon.Kids.Add(newKid);
             _dbContext.Update(kids3dIcon);
             

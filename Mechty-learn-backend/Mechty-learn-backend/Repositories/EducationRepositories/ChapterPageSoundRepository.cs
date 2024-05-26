@@ -2,7 +2,7 @@ using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mechty_learn_backend.Repositories;
+namespace Mechty_learn_backend.Repositories.EducationRepositories;
 
 public class ChapterPageSoundRepository : IChapterPageSoundRepository
 {
@@ -26,7 +26,7 @@ public class ChapterPageSoundRepository : IChapterPageSoundRepository
         
         if (chapterPage == null)
         {
-            throw new Exception("Error in CPSR 01");
+            return null;
         }
         
         var chapterPageSound = new ChapterPageSound() {ChapterPageId = chapterPageId, ChapterPageSoundUrl = chapterPageSoundUrl, ChapterPage = chapterPage};
@@ -35,22 +35,13 @@ public class ChapterPageSoundRepository : IChapterPageSoundRepository
 
         var newChapterPageSound = await _dbContext.ChapterPageSounds.FirstOrDefaultAsync(c => c.ChapterPageId == chapterPageId);
 
-        if (newChapterPageSound == null)
-        {
-            throw new Exception("Error in CPSR 02");
-        }
-        return newChapterPageSound.Id;
+        return newChapterPageSound?.Id;
     }
     
-    public async Task<ChapterPageSound> GetChapterPageSoundById(int chapterPageSoundId)
+    public async Task<ChapterPageSound?> GetChapterPageSoundById(int chapterPageSoundId)
     {
         var chapterPageSound = await _dbContext.ChapterPageSounds.FirstOrDefaultAsync(c => c.Id == chapterPageSoundId);
 
-        if (chapterPageSound == null)
-        {
-            throw new Exception("Error in CPSR 03");
-        }
-
-        return chapterPageSound;
+        return chapterPageSound ?? null;
     }
 }

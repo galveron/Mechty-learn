@@ -1,5 +1,6 @@
 using Mechty_learn_backend.Models;
 using Mechty_learn_backend.Repositories;
+using Mechty_learn_backend.Repositories.EducationRepositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mechty_learn_backend.Controllers;
