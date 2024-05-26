@@ -2,7 +2,7 @@ using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mechty_learn_backend.Repositories;
+namespace Mechty_learn_backend.Repositories.EducationRepositories;
 
 public class LessonRepository : ILessonRepository
 {
@@ -35,15 +35,10 @@ public class LessonRepository : ILessonRepository
         return newLesson.Id;
     }
     
-    public async Task<Lesson> GetLessonById(int lessonId)
+    public async Task<Lesson?> GetLessonById(int lessonId)
     {
         var lesson = await _dbContext.Lessons.FirstOrDefaultAsync(l => l.Id == lessonId);
 
-        if (lesson == null)
-        {
-            throw new Exception("Error in LR 03");
-        }
-
-        return lesson;
+        return lesson ?? null;
     }
 }

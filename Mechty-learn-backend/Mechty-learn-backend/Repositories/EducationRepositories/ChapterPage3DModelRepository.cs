@@ -2,7 +2,7 @@ using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mechty_learn_backend.Repositories;
+namespace Mechty_learn_backend.Repositories.EducationRepositories;
 
 public class ChapterPage3DModelRepository : IChapterPage3DModeRepository
 {
@@ -26,7 +26,7 @@ public class ChapterPage3DModelRepository : IChapterPage3DModeRepository
         
         if (chapterPage == null)
         {
-            throw new Exception("Error in CP3DR 01");
+            return null;
         }
         
         var chapterPage3DModel = new ChapterPage3DModel() {ChapterPageId = chapterPageId, ChapterPage3DModelUrl = chapterPage3DModelUrl, ChapterPage = chapterPage};
@@ -35,22 +35,13 @@ public class ChapterPage3DModelRepository : IChapterPage3DModeRepository
 
         var newChapterPage3DModel = await _dbContext.ChapterPage3DModels.FirstOrDefaultAsync(c => c.ChapterPageId == chapterPageId);
 
-        if (newChapterPage3DModel == null)
-        {
-            throw new Exception("Error in CP3DR 02");
-        }
-        return newChapterPage3DModel.Id;
+        return newChapterPage3DModel?.Id;
     }
     
-    public async Task<ChapterPage3DModel> GetChapterPage3DModelById(int chapterPage3DModelId)
+    public async Task<ChapterPage3DModel?> GetChapterPage3DModelById(int chapterPage3DModelId)
     {
         var chapterPage3DModel = await _dbContext.ChapterPage3DModels.FirstOrDefaultAsync(c => c.Id == chapterPage3DModelId);
 
-        if (chapterPage3DModel == null)
-        {
-            throw new Exception("Error in CP3DR 03");
-        }
-
-        return chapterPage3DModel;
+        return chapterPage3DModel ?? null;
     }
 }

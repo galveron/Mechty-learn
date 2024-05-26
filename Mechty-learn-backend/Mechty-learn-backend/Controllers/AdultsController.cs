@@ -9,13 +9,10 @@ namespace Mechty_learn_backend.Controllers;
 public class AdultsController : ControllerBase
 {
     private readonly IAdultsRepository _adultsRepository;
-    private readonly IKidsRepository _kidsRepository;
 
     public AdultsController(
-        IKidsRepository kidsRepository,
         IAdultsRepository adultsRepository)
     {
-        _kidsRepository = kidsRepository;
         _adultsRepository = adultsRepository;
     }
 
