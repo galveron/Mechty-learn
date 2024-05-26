@@ -27,8 +27,21 @@
 }
 
 .side-3d {
-    min-height: 5em;
-    background-color: $primary-white;
+    position: relative;
+    width: 85%;
+    border-radius: 0.8em;
+}
+
+.side-3d:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+#ref-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 //profile section

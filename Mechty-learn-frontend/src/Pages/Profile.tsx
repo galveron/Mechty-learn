@@ -1,3 +1,5 @@
+import Rocket from '../Components/threejs-components/Rocket'
+
 export type User = {
     userName?: string,
     userId?: string,
@@ -11,7 +13,7 @@ function Profile({ userName, userEmail }: User) {
         <>
             <div className="profile">
                 <aside className="side-profile">
-                    <div className="side-3d">3d element</div>
+                    <div className="side-3d" id="side-3d"><Rocket /></div>
                     <div className="side-div"><button className="side-btn">Settings</button></div>
                     <div className="side-div"><button className="side-btn">Courses</button></div>
                     <div className="side-div"><button className="side-btn">Help</button></div>
