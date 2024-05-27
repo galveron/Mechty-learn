@@ -17,6 +17,6 @@ jobs:
       attestations: write
     with:
       path: ./Mechty-learn-backend/Mechty-learn-backend
-      tag: asp
+      tag: backend
     secrets:
       render-deploy-url: ${{ secrets.RENDER_URL }}
