@@ -38,12 +38,12 @@ jobs:
         with:
           context: ${{ inputs.path }}
           push: true
-          tags: ${{ env.REGISTRY }}/mechty-learn/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+          tags: ${{ env.REGISTRY }}/galveron/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
           build-args: ${{ inputs.build-args }}
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
         with:
-          subject-name: ${{ env.REGISTRY }}/mechty-learn/${{ env.IMAGE_NAME }}
+          subject-name: ${{ env.REGISTRY }}/galveron/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
