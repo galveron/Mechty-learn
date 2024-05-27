@@ -18,7 +18,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: mechty-learn
+  IMAGE_NAME: backend
 
 jobs:
   build-and-push-image:
