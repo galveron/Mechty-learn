@@ -5,7 +5,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - ./asp
+      - ./Mechty-learn-backend/asp
 
 jobs:
   backend:
@@ -16,7 +16,7 @@ jobs:
       id-token: write
       attestations: write
     with:
-      path: ./asp
+      path: ./Mechty-learn-backend/asp
       tag: asp
     secrets:
       render-deploy-url: ${{ secrets.RENDER_URL }}
