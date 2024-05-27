@@ -36,7 +36,7 @@ jobs:
         id: push
         uses: docker/build-push-action@v5.3.0
         with:
-          context: ./Mechty-learn-backend/asp
+          context: ./Mechty-learn-backend/Mechty-learn-backend
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
           build-args: ${{ inputs.build-args }}
