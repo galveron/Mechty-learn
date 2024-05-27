@@ -1,4 +1,4 @@
-name: Build, push and redeploy frontend React image
+name: Frontend
 
 on:
   workflow_dispatch:
