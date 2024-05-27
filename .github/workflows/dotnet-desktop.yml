@@ -1,0 +1,22 @@
+name: Backend 
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+    paths:
+      - backend/asp
+
+jobs:
+  backend:
+    uses: ./.github/workflows/build-push-and-redeploy.yml
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+    with:
+      path: backend/asp
+      tag: asp
+    secrets:
+      render-deploy-url: ${{ secrets.RENDER_URL }}
