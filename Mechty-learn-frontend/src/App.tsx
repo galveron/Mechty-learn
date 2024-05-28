@@ -13,7 +13,8 @@ function App() {
 
   async function fetchUser(id: string) {
     let url = `/api/Adults/GetAdultById?id=${id}`
-    console.log(url)
+    console.log("url: " + url)
+    console.log("url env: " + process.env.BACKEND_URL)
     const res = await fetch(url,
       {
         method: "GET",
