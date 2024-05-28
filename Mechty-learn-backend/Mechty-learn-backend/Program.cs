@@ -92,17 +92,17 @@ void AddCors()
             policy  =>
             {
                 policy
-                    .WithOrigins("*")
+                    .WithOrigins("http://localhost:8080","https://mechty-learn-frontend.onrender.com" )
                     .AllowAnyHeader()
                     .AllowAnyMethod()
-                    .AllowCredentials()
-                    .SetIsOriginAllowed(origin =>
-                    {
-                        if (string.IsNullOrWhiteSpace(origin)) return false;
-                        if (origin.StartsWith("http://localhost", StringComparison.CurrentCultureIgnoreCase)) return true;
-                        if (origin.StartsWith("https://mechty-learn-frontend.onrender.com", StringComparison.CurrentCultureIgnoreCase)) return true;
-                        return false;
-                    });
+                    .AllowCredentials();
+                // .SetIsOriginAllowed(origin =>
+                // {
+                //     if (string.IsNullOrWhiteSpace(origin)) return false;
+                //     if (origin.StartsWith("http://localhost", StringComparison.CurrentCultureIgnoreCase)) return true;
+                //     if (origin.StartsWith("https://mechty-learn-frontend.onrender.com", StringComparison.CurrentCultureIgnoreCase)) return true;
+                //     return false;
+                // });
             });
     });
 }
