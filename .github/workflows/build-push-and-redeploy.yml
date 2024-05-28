@@ -48,7 +48,7 @@ jobs:
           TAG: latest
           BACKEND_URL: ${{ secrets.BACKEND_URL }}
         run: |
-          docker build -t $REGISTRY/galveron/$IMAGE_NAME:$TAG ./Mechty-learn-frontend
+          docker build --build-arg BACKEND_URL="https://mechty-learn.onrender.com" -t $REGISTRY/galveron/$IMAGE_NAME:$TAG ./Mechty-learn-frontend
           docker push $REGISTRY/galveron/$IMAGE_NAME:$TAG
 
   redeploy-on-render:
