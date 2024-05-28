@@ -98,7 +98,7 @@ void AddCors()
                     {
                         if (string.IsNullOrWhiteSpace(origin)) return false;
                         if (origin.StartsWith("http://localhost", StringComparison.CurrentCultureIgnoreCase)) return true;
-                        if (origin.ToLower().StartsWith("https://mechty-learn-frontend.onrender.com")) return true;
+                        if (origin.StartsWith("https://mechty-learn-frontend.onrender.com", StringComparison.CurrentCultureIgnoreCase)) return true;
                         return false;
                     });
             });
