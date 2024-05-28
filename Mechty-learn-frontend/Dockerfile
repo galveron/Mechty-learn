@@ -6,4 +6,6 @@ WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
+RUN echo "backend-url"
+RUN echo ${BACKEND_URL}
 CMD [ "npm", "run", "preview", "--", "--host", "0.0.0.0" ]

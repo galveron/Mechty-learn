@@ -12,7 +12,7 @@ function App() {
   const [userId, setUserId] = useState<string>("")
 
   async function fetchUser(id: string) {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL ?? import.meta.env.BACKEND_URL;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL ?? import.meta.env.VITE_BACKEND_URL ?? process.env.BACKEND_URL ?? process.env.VITE_BACKEND_URL;
 
     let url = `${backendUrl}/api/Adults/GetAdultById?id=${id}`
 
