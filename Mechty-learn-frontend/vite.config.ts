@@ -6,6 +6,7 @@ dotenv.config();
 
 const backendUrl = process.env.VITE_BACKEND_URL ?? '';
 
+
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -13,7 +14,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': backendUrl
+      '/api': {
+        target: backendUrl,
+        changeOrigin: true,
+        secure: false,
+      },
     }
   },
   define: {

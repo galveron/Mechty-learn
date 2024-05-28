@@ -12,16 +12,23 @@ function App() {
   const [userId, setUserId] = useState<string>("");
 
   async function fetchUser(id: string) {
-    let url = `/api/Adults/GetAdultById?id=${id}`
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    let url = `${backendUrl}/api/Adults/GetAdultById?id=${id}`
+
     console.log("url: " + url)
-    console.log("url env: " + process.env.BACKEND_URL)
-    const res = await fetch(url,
-      {
-        method: "GET",
-        credentials: 'include',
-        headers: { 'Content-type': 'application/json' }
-      })
-    if (res.status) {
+    console.log("url env: " + backendUrl)
+    try {
+      const res = await fetch(url,
+        {
+          method: "GET",
+          credentials: 'include',
+          headers: { 'Content-type': 'application/json' }
+        })
+
+      if (!res.ok) {
+        throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
+      }
+
       const data = await res.json()
 
       const newUser: User = {
@@ -33,7 +40,10 @@ function App() {
 
       return newUser
     }
-    throw Error("Faild to fetch")
+    catch (error) {
+      console.error("Error fetching user:", error);
+      throw Error("Faild to fetch")
+    }
   }
 
   useEffect(() => {
