@@ -12,7 +12,8 @@ function App() {
   const [userId, setUserId] = useState<string>("");
 
   async function fetchUser(id: string) {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    //const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = "https://mechty-learn.onrender.com"
     let url = `${backendUrl}/api/Adults/GetAdultById?id=${id}`
 
     console.log("url: " + url)
