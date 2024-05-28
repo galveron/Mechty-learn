@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import './src/vite-env';
+import * as dotenv from 'dotenv';
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL ?? '';
-// https://vitejs.dev/config/
+dotenv.config();
+
+const backendUrl = process.env.VITE_BACKEND_URL ?? '';
+
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -13,5 +15,10 @@ export default defineConfig({
     proxy: {
       '/api': backendUrl
     }
-  }
+  },
+  define: {
+    'process.env': {
+      VITE_BACKEND_URL: process.env.VITE_BACKEND_URL,
+    },
+  },
 })
