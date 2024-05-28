@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import Layout, { User } from './Layout'
@@ -8,11 +8,12 @@ import './scss/index.scss'
 
 
 function App() {
-  const [user, setUser] = useState<User>();
-  const [userId, setUserId] = useState<string>("");
+  const [user, setUser] = useState<User>()
+  const [userId, setUserId] = useState<string>("")
 
   async function fetchUser(id: string) {
-    const backendUrl = "https://mechty-learn.onrender.com";
+    const backendUrl = import.meta.env.VITE_BACKEND_URL ?? import.meta.env.BACKEND_URL;
+
     let url = `${backendUrl}/api/Adults/GetAdultById?id=${id}`
 
     console.log("url: " + url)
@@ -41,7 +42,7 @@ function App() {
       return newUser
     }
     catch (error) {
-      console.error("Error fetching user:", error);
+      console.error("Error fetching user:", error)
       throw Error("Faild to fetch")
     }
   }
@@ -86,7 +87,7 @@ function App() {
       ]
     }
   ])
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 
 export default App
