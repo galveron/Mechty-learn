@@ -15,7 +15,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: backendUrl,
+        target: "https://mechty-learn.onrender.com",
         changeOrigin: true,
         secure: false,
       },
