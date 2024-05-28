@@ -92,7 +92,7 @@ void AddCors()
             policy  =>
             {
                 policy
-                    //.WithOrigins("*") //doesn't work with credentials included
+                    .WithOrigins("*")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials()
