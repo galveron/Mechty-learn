@@ -20,6 +20,6 @@ jobs:
       tag: react
       build-args: |
         VITE_APP_TITLE=Mechty frontend
-        BACKEND_URL=${secrets.BACKEND_URL}
+        BACKEND_URL=${{secrets.BACKEND_URL}}
     secrets:
       render-deploy-url: ${{ secrets.RENDER_FRONTEND_URL }}
