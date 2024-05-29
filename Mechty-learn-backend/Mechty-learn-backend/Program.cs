@@ -94,8 +94,8 @@ void AddCors()
                 policy
                     .WithOrigins("*")
                     .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowCredentials();
+                    .AllowAnyMethod();
+                //.AllowCredentials();
                 // .SetIsOriginAllowed(origin =>
                 // {
                 //     if (string.IsNullOrWhiteSpace(origin)) return false;
