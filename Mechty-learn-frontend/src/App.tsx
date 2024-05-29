@@ -15,6 +15,8 @@ function App() {
     let url = `/api/Adults/GetAdultById?id=${id}`
 
     console.log("url: " + url)
+    console.log("is dev:" + process.env.VITE_DEV_SERVER)
+
     try {
       const res = await fetch(url,
         {
