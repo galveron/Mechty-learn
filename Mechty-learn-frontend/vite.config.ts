@@ -1,11 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import * as dotenv from 'dotenv';
-
-dotenv.config();
-
-const backendUrl = process.env.VITE_BACKEND_URL ?? '';
-
 
 export default defineConfig({
   plugins: [react()],
@@ -15,15 +9,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "https://mechty-learn.onrender.com",
+        target: process.env.VITE_DEV_SERVER === 'true' ? 'http://localhost:8080' : 'https://mechty-learn.onrender.com',
         changeOrigin: true,
-        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     }
-  },
-  define: {
-    'process.env': {
-      VITE_BACKEND_URL: process.env.VITE_BACKEND_URL,
-    },
   },
 })

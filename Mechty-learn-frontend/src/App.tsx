@@ -12,12 +12,9 @@ function App() {
   const [userId, setUserId] = useState<string>("")
 
   async function fetchUser(id: string) {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL ?? import.meta.env.VITE_BACKEND_URL ?? process.env.BACKEND_URL ?? process.env.VITE_BACKEND_URL;
-
-    let url = `${backendUrl}/api/Adults/GetAdultById?id=${id}`
+    let url = `/api/Adults/GetAdultById?id=${id}`
 
     console.log("url: " + url)
-    console.log("url env: " + backendUrl)
     try {
       const res = await fetch(url,
         {
