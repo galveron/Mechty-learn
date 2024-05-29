@@ -22,7 +22,6 @@ function App() {
       const res = await fetch(url,
         {
           method: "GET",
-          credentials: 'include',
           headers: { 'Content-type': 'application/json' }
         })
 
