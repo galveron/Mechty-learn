@@ -92,7 +92,7 @@ void AddCors()
             policy  =>
             {
                 policy
-                    .WithOrigins("http://localhost:8080","https://mechty-learn-frontend.onrender.com" )
+                    .WithOrigins("*")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
