@@ -22,7 +22,8 @@
     @include league-spartan-bold-yellow;
 }
 
-.register-btn {
+.register-btn,
+.profile-btn {
     @include primary-button-pink;
 }
 
