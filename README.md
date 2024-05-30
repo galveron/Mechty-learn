@@ -29,8 +29,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
-        <li><a href="#frontend">Check my frontend</a></li>
+        <li><a href="#app">Check my app</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -61,9 +60,9 @@ Key Features:
 * [![Azure][Azure]][Azure-url]
 * [![React][React.js]][React-url]
 * [![Three][Three.js]][Three.js-url]
+* [![Sass][Sass]][Sass-url]
 * [![TypeScript][TypeScript]][TypeScript-url]
 * [![Socket.io][Socket.io]][Socket.io-url]
-* 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,15 +71,14 @@ Key Features:
 
 This project is in progress. Here are the steps what I already done:
 
-* Planning, decide technics, discuss plans with mentor
 * Set up backend
-* Create database with Entity Framework Core
 * Create main controller and repository methods
 
 * Create frontend base
-* Learn about TypeScript and Sass
 * Create a good structure on frontend
-* Create Home page structure
+* Create Home page and Profile page structure
+
+* I am currently working on deploying the app. 
 
 If you are interested in what I am currently working on, you can check the open issues: 
 [https://github.com/galveron/mechty-learn/issues](https://github.com/galveron/mechty-learn/issues)
@@ -89,40 +87,14 @@ If you are interested in what I am currently working on, you can check the open 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To try out our application, please follow the next steps:
+<a name="app"></a>
+### Check my app
 
-<!-- ### Prerequisites
-
-* npm
-  ```sh
-  npm install
-  ```
--->
-
-<a name="frontend"></a>
-### Check my frontend
-
-1. Download or clone the repo.
-   To clone: 
-   ```sh
-   git clone https://github.com/galveron/mechty-learn
-   ```
-2. Install npm pacakges
-   ```sh
-   npm install
-   ```
-3. Change directory
-   ```sh
-   cd ../Mechty-learn/Mechty-learn-frontend
-   ```
-4. Start frontend
-   ```sh
-   npm run dev
-   ```
-5. Open 'http://localhost:8080' in your browser
+Open this link in your browser: https://mechty-learn-frontend.onrender.com/
 
    WARNING!
-   This project is still in development. If you are interested in what I get done already or what I am wokring on right now click here:
+   This project is still in development. I created only the structure, buttons and functions are still not working.
+   If you are interested in what I get done already or what am I wokring on right now click here:
     <a href="#progress">Progress</a>
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
