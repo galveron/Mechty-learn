@@ -95,5 +95,4 @@ void AddIdentity()
             options.Password.RequireLowercase = false;
         })
         .AddEntityFrameworkStores<ApplicationDbContext>();
-    
 }
