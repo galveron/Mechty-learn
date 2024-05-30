@@ -12,7 +12,7 @@ function App() {
   const [userId, setUserId] = useState<string>("")
 
   async function fetchUser(id: string) {
-    let url = '/api/Adults/GetAdultById?id=${id}'
+    let url = `/api/Adults/GetAdultById?id=${id}`
 
     try {
       const res = await fetch(url,
