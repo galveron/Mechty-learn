@@ -36,12 +36,9 @@ builder.Services.AddDbContext<ApplicationDbContext>((options) =>
     options.UseSqlServer(connectionString));
 Console.WriteLine(connectionString);
 
-AddCors();
 AddIdentity();
 
 var app = builder.Build();
-
-app.UseCors("MyAllowSpecificOrigins");
 
 if (app.Environment.IsDevelopment())
 {
@@ -81,32 +78,6 @@ void ConfigureSwagger()
                 new string[] { }
             }
         });
-    });
-}
-
-void AddCors()
-{
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy(name: "MyAllowSpecificOrigins",
-            policy  =>
-            {
-                policy
-                    .AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
-                    // .WithOrigins("http://localhost:8080","https://mechty-learn-frontend.onrender.com" )
-                    // .AllowAnyHeader()
-                    // .AllowAnyMethod()
-                    // .AllowCredentials();
-                // .SetIsOriginAllowed(origin =>
-                // {
-                //     if (string.IsNullOrWhiteSpace(origin)) return false;
-                //     if (origin.StartsWith("http://localhost", StringComparison.CurrentCultureIgnoreCase)) return true;
-                //     if (origin.StartsWith("https://mechty-learn-frontend.onrender.com", StringComparison.CurrentCultureIgnoreCase)) return true;
-                //     return false;
-                // });
-            });
     });
 }
 
