@@ -29,6 +29,6 @@ public class AdultsController : ControllerBase
     {
         var adult = await _adultsRepository.GetAdultById(id);
 
-        return adult == null ? Problem("Error in AC 02.") : Ok(adult);
+        return adult == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adult);
     }
 }
