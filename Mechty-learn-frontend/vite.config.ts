@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const backendUrl = process.env.DOTNET_BACKEND_URL || 'http://localhost:5019'
+
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -9,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.DOTNET_BACKEND_URL || 'http://localhost:5019',
+        target: backendUrl,
         changeOrigin: true,
       },
     }
@@ -17,7 +19,7 @@ export default defineConfig({
   preview: {
     proxy: {
       '/api': {
-        target: process.env.DOTNET_BACKEND_URL || 'http://localhost:5019',
+        target: backendUrl,
         changeOrigin: true,
       },
     }
