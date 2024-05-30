@@ -12,11 +12,7 @@ function App() {
   const [userId, setUserId] = useState<string>("")
 
   async function fetchUser(id: string) {
-    //let url = `/api/Adults/GetAdultById?id=${id}`
-    let url = 'https://mechty-learn.onrender.com/api/Adults/GetAdultById?id=${id}'
-
-    console.log("url: " + url)
-    console.log("is dev:" + process.env.VITE_DEV_SERVER)
+    let url = '/api/Adults/GetAdultById?id=${id}'
 
     try {
       const res = await fetch(url,

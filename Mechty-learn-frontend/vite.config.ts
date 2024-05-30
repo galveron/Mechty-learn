@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_DEV_SERVER === 'true' || process.env.VITE_DEV_SERVER === 'undefined' ? 'https://mechty-learn.onrender.com' : 'https://mechty-learn.onrender.com',
+        target: process.env.DOTNET_BACKEND_URL || 'http://localhost:5019',
         changeOrigin: true,
       },
     }
