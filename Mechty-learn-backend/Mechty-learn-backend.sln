@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mechty-learn-backend", "Mechty-learn-backend\Mechty-learn-backend.csproj", "{2B86397B-5442-4E1D-8CBE-FBD56CC05F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mechty-learn-backend-unit-teste", "Mechty-learn-backend-unit-teste\Mechty-learn-backend-unit-teste.csproj", "{DE0C4A97-99AC-498A-BEF3-0761468248DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mechty-learn-backend-unit-tests", "Mechty-learn-backend-unit-tests\Mechty-learn-backend-unit-tests.csproj", "{DE0C4A97-99AC-498A-BEF3-0761468248DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
