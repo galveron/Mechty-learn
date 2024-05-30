@@ -14,4 +14,12 @@ export default defineConfig({
       },
     }
   },
+  preview: {
+    proxy: {
+      '/api': {
+        target: process.env.DOTNET_BACKEND_URL || 'http://localhost:5019',
+        changeOrigin: true,
+      },
+    }
+  },
 })
