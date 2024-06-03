@@ -12,8 +12,10 @@ var config =
         .Build();
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = config["ConnectionString"] ?? Environment.GetEnvironmentVariable("CONNECTIONSTRING");
-Console.WriteLine(Environment.GetEnvironmentVariable("DB"));
+var connectionString = config["ConnectionString"] ?? config["CONNECTIONSTRING"] ?? Environment.GetEnvironmentVariable("CONNECTIONSTRING");
+Console.WriteLine("CS:" + Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
+Console.WriteLine("cs:" + config["ConnectionString"]);
+Console.WriteLine("cs2:" + config["CONNECTIONSTRING"]);
 ConfigureSwagger();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
