@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 8080",
+    "dev": "vite --port 5000",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --port 8080"
+    "preview": "vite preview --port 5000"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
