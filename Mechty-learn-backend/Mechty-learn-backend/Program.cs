@@ -40,6 +40,11 @@ Console.WriteLine(connectionString);
 
 AddIdentity();
 
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(5019);
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
