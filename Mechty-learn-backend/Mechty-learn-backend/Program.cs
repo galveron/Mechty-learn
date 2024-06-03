@@ -40,10 +40,7 @@ Console.WriteLine(connectionString);
 
 AddIdentity();
 
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-    serverOptions.ListenAnyIP(5019);
-});
+builder.WebHost.UseUrls("http://*:5019");
 
 var app = builder.Build();
 
