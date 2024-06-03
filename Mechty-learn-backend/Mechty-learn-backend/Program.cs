@@ -12,7 +12,7 @@ var config =
         .Build();
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = config["ConnectionString"] ?? config["CONNECTIONSTRING"] ?? Environment.GetEnvironmentVariable("CONNECTIONSTRING");
+var connectionString = config["ConnectionString"] ?? config["CONNECTIONSTRING"] ?? Environment.GetEnvironmentVariable("CONNECTIONSTRING") ?? "nothing";
 Console.WriteLine("CS:" + Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
 Console.WriteLine("cs:" + config["ConnectionString"]);
 Console.WriteLine("cs2:" + config["CONNECTIONSTRING"]);
