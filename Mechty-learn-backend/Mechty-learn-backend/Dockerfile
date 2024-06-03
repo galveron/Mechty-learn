@@ -12,6 +12,5 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-EXPOSE 5019
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Mechty-learn-backend.dll"]

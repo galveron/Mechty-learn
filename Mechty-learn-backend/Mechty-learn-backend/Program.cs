@@ -38,8 +38,6 @@ Console.WriteLine(connectionString);
 
 AddIdentity();
 
-builder.WebHost.UseUrls("http://*:5019");
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
