@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: backendUrl,
+        target: 'http://localhost:5019',
         changeOrigin: true,
       },
     }
@@ -19,7 +19,7 @@ export default defineConfig({
   preview: {
     proxy: {
       '/api': {
-        target: backendUrl,
+        target: process.env.DOTNET_BACKEND_URL,
         changeOrigin: true,
       },
     }
