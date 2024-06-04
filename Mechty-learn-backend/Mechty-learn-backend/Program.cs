@@ -33,7 +33,7 @@ builder.Services.AddTransient<IChapterPageTextRepository, ChapterPageTextReposit
 builder.Services.AddTransient<IChapterPage3DModeRepository, ChapterPage3DModelRepository>();
 builder.Services.AddTransient<IProgressRepository, ProgressRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>((options) =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(connectionString));
 Console.WriteLine(connectionString);
 
 AddIdentity();

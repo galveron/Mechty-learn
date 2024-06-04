@@ -31,6 +31,6 @@ public class AdultsController : ControllerBase
 
         var demoAdult = new Adult{UserName = "userName", Email = "email@email.com"};
 
-        return adult == null ? Problem("Error in AC 02.", statusCode:418) : Ok(demoAdult);
+        return adult == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adult);
     }
 }
