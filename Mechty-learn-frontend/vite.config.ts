@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:5019',
         changeOrigin: true,
       },
     }
@@ -17,7 +17,7 @@ export default defineConfig({
   preview: {
     proxy: {
       '/api': {
-        target: process.env.RENDER_BACKEND_URL,
+        target: 'https://mechty-learn.onrender.com',
         changeOrigin: true,
       },
     }
