@@ -17,7 +17,7 @@ export default defineConfig({
   preview: {
     proxy: {
       '/api': {
-        target: process.env.DOTNET_BACKEND_URL,
+        target: process.env.RENDER_BACKEND_URL,
         changeOrigin: true,
       },
     }
