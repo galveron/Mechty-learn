@@ -24,7 +24,7 @@ public class AuthenticationSeeder
 
     async Task CreateAdminIfNotExists()
     {
-        var adminInDb = await _adultManager.FindByEmailAsync("admin@admin.hu");
+        var adminInDb = await _adultManager.FindByEmailAsync("admin@admin.com");
         if (adminInDb == null)
         {
             var admin = new Adult { UserName = "admin", Email = "admin@admin.com" };
