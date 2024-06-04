@@ -5,7 +5,7 @@ import Profile from './Pages/Profile'
 import Layout, { User } from './Layout'
 import './scss/index.scss'
 
-
+console.log("url: " + process.env.DOTNET_BACKEND_URL)
 
 function App() {
   const [user, setUser] = useState<User>()
