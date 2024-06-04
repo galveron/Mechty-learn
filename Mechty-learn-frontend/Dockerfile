@@ -1,6 +1,6 @@
 FROM node:20.13.1
 WORKDIR /app
-ENV RENDER_BACKEDN_URL=${RENDER_BACKEDN_URL}
+ENV DOTNET_BACKEND_URL=${DOTNET_BACKEND_URL}
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
