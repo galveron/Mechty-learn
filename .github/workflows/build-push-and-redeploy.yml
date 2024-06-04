@@ -46,7 +46,7 @@ jobs:
           REGISTRY: ghcr.io
           IMAGE_NAME: frontend
           TAG: latest
-          RENDER_BACKEND_URL: ${{ secrets.RENDER_BACKEND_URL}}
+          BACKEND_URL: ${{ secrets.DOTNET_BACKEND_URL}}
         run: |
           docker build -t $REGISTRY/galveron/$IMAGE_NAME:$TAG ./Mechty-learn-frontend
           docker push $REGISTRY/galveron/$IMAGE_NAME:$TAG
