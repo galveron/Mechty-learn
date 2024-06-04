@@ -31,6 +31,7 @@ builder.Services.AddTransient<IChapterPageRepository, ChapterPageRepository>();
 builder.Services.AddTransient<IChapterPageSoundRepository, ChapterPageSoundRepository>();
 builder.Services.AddTransient<IChapterPageTextRepository, ChapterPageTextRepository>();
 builder.Services.AddTransient<IChapterPage3DModeRepository, ChapterPage3DModelRepository>();
+builder.Services.AddScoped<AuthenticationSeeder>();
 builder.Services.AddTransient<IProgressRepository, ProgressRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>((options) =>
     options.UseNpgsql(connectionString));
@@ -47,6 +48,11 @@ if (app.Environment.IsDevelopment())
 }
 //app.UseHttpsRedirection();
 app.MapControllers();
+
+using var scope = app.Services.CreateScope();
+var authenticationSeeder = scope.ServiceProvider.GetRequiredService<AuthenticationSeeder>();
+
+authenticationSeeder.AddAdmin();
 
 try
 {
