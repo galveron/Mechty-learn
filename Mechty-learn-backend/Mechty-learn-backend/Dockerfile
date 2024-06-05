@@ -8,12 +8,15 @@ RUN dotnet restore
 # Copy everything else and build
 COPY . ./
 RUN dotnet publish -c Release -o out
+RUN dotnet tool install --global dotnet-ef --version 8.0.0
+ENV PATH="$PATH:/root/.dotnet/tools"
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build-env /app/out .
 
-RUN dotnet tool install --global dotnet-ef --version 8.0.0
+COPY --from=build-env /root/.dotnet /root/.dotnet
+COPY --from=build-env /root/.nuget /root/.nuget
 ENV PATH="$PATH:/root/.dotnet/tools"
 ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Mechty-learn-backend.dll"]
