@@ -13,6 +13,4 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build-env /app/out .
-RUN dotnet tool install --global dotnet-ef --version 8.0.0
-ENV PATH="$PATH:/root/.dotnet/tools"
-ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Mechty-learn-backend.dll"]
+ENTRYPOINT ["dotnet ef migrations add initialMigration && dotnet ef database update && dotnet Mechty-learn-backend.dll"]
