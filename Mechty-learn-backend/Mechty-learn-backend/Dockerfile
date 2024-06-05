@@ -19,4 +19,7 @@ COPY --from=build-env /app/out .
 COPY --from=build-env /root/.dotnet /root/.dotnet
 COPY --from=build-env /root/.nuget /root/.nuget
 ENV PATH="$PATH:/root/.dotnet/tools"
+RUN echo $PATH
+RUN ls -la /root/.dotnet/tools
+RUN dotnet --info
 ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Mechty-learn-backend.dll"]
