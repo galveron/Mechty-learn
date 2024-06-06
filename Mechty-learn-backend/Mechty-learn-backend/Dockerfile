@@ -7,7 +7,7 @@ COPY /*.csproj Mechty-learn-backend/
 RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
 # Copy everything else and build
 COPY . .
-WORKDIR /src/Mechty-learn-backend/Mechty-learn-backend
+WORKDIR /src/Mechty-learn-backend
 RUN dotnet publish -c Release -o /app
 
 # Build runtime image
