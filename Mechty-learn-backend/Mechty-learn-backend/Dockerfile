@@ -6,7 +6,7 @@ EXPOSE 5019
 COPY Mechty-learn-backend.csproj ./Mechty-learn-backend/
 RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
 
-COPY ..
+COPY . ./
 WORKDIR /app/Mechty-learn-backend
 
 RUN dotnet publish -c Release -o /app/publish
