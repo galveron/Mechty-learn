@@ -4,7 +4,7 @@ WORKDIR /src
 EXPOSE 5019
 # Copy csproj and restore as distinct layers
 COPY /*.csproj Mechty-learn-backend/
-RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend/Mechty-learn-backend.csproj
+RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
 # Copy everything else and build
 COPY . .
 WORKDIR /src/Mechty-learn-backend/Mechty-learn-backend
