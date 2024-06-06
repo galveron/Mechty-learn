@@ -3,10 +3,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /src
 EXPOSE 5019
 
-COPY Mechty-learn-backend/Mechty-learn-backend/*.csproj Mechty-learn-backend/Mechty-learn-backend/
-RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend/Mechty-learn-backend.csproj
+COPY Mechty-learn-backend/Mechty-learn-backend/Mechty-learn-backend.csproj Mechty-learn-backend/
+RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
 
-COPY . .
+COPY Mechty-learn-backend/Mechty-learn-backend/. Mechty-learn-backend/
 WORKDIR /src/Mechty-learn-backend/Mechty-learn-backend
 
 RUN dotnet build -c Release
@@ -26,4 +26,4 @@ RUN echo $PATH
 RUN ls -la /root/.dotnet/tools
 RUN dotnet --info
 
-ENTRYPOINT ["sh", "-c", "dotnet ef database update --project /src/Mechty-learn-backend/Mechty-learn-backend.csproj && dotnet Mechty-learn-backend.dll"]
+ENTRYPOINT ["sh", "-c", "dotnet ef database update --project /src/Mechty-learn-backend/Mechty-learn-backend/Mechty-learn-backend.csproj && dotnet Mechty-learn-backend.dll"]
