@@ -22,4 +22,5 @@ RUN echo $PATH
 RUN ls -la /root/.dotnet/tools
 RUN dotnet --info
 
+EXPOSE 5019
 ENTRYPOINT ["sh", "-c", "dotnet ef database update", "dotnet Mechty-learn-backend.dll"]
