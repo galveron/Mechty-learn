@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 EXPOSE 5019
 
-COPY Mechty-learn-backend/Mechty-learn-backend.csproj ./Mechty-learn-backend/
+COPY Mechty-learn-backend.csproj ./Mechty-learn-backend/
 RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
 
 COPY Mechty-learn-backend/. Mechty-learn-backend/
