@@ -1,7 +1,7 @@
 ﻿
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
-EXPOSE 5019
+EXPOSE 1000
 
 COPY *.csproj ./
 RUN dotnet restore
@@ -22,5 +22,5 @@ RUN echo $PATH
 RUN ls -la /root/.dotnet/tools
 RUN dotnet --info
 
-EXPOSE 5019
+EXPOSE 1000
 ENTRYPOINT ["sh", "-c", "dotnet ef database update", "dotnet Mechty-learn-backend.dll"]
