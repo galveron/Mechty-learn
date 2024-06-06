@@ -22,4 +22,4 @@ RUN echo $PATH
 RUN ls -la /root/.dotnet/tools
 RUN dotnet --info
 
-ENTRYPOINT ["sh", "-c", "dotnet ef database update --project /Mechty-learn-backend.csproj && dotnet Mechty-learn-backend.dll"]
+ENTRYPOINT ["sh", "-c", "dotnet ef database update --project /Mechty-learn-backend.csproj", "dotnet Mechty-learn-backend.dll"]
