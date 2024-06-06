@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /src
 EXPOSE 5019
 # Copy csproj and restore as distinct layers
-COPY Mechty-learn-backend/Mechty-learn-backend/*.csproj Mechty-learn-backend/Mechty-learn-backend/
+COPY Mechty-learn-backend/*.csproj Mechty-learn-backend/Mechty-learn-backend/
 RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend/Mechty-learn-backend.csproj
 # Copy everything else and build
 COPY . .
