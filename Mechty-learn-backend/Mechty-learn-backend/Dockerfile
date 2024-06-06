@@ -12,7 +12,7 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/sdk:8.0
 WORKDIR /src/Mechty-learn-backend
-COPY --from=build-env /app .
+COPY --from=build-env /src .
 
 
 RUN dotnet tool install --global dotnet-ef --version 8.0.0
