@@ -15,7 +15,7 @@ WORKDIR /app
 COPY --from=build-env /app .
 
 
-RUN dotnet tool install --global dotnet-ef --version 8.0.0
+RUN dotnet tool install --global dotnet-ef --version 8.0
 ENV PATH="$PATH:/root/.dotnet/tools"
 
 RUN echo $PATH
