@@ -1,21 +1,18 @@
-﻿# Dockerfile
+﻿
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 EXPOSE 5019
 
-COPY Mechty-learn-backend.csproj ./Mechty-learn-backend/
-RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
+COPY *.csproj ./
+RUN dotnet restore
 
 COPY . ./
-WORKDIR /app/Mechty-learn-backend
+RUN dotnet publish -c Release -o out
 
-RUN dotnet publish -c Release -o /app/publish
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/sdk:8.0
 WORKDIR /app
-
-COPY --from=build-env /app/publish .
+COPY --from=build-env /app/out .
 
 
 RUN dotnet tool install --global dotnet-ef --version 8.0.0
@@ -25,4 +22,4 @@ RUN echo $PATH
 RUN ls -la /root/.dotnet/tools
 RUN dotnet --info
 
-ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Mechty-learn-backend.dll"]
+ENTRYPOINT ["sh", "-c", "dotnet ef database update --project /Mechty-learn-backend.csproj && dotnet Mechty-learn-backend.dll"]
