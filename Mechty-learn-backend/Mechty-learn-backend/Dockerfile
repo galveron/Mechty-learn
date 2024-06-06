@@ -2,16 +2,19 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /src
 EXPOSE 5019
-# Copy csproj and restore as distinct layers
-COPY /*.csproj Mechty-learn-backend/
-RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend.csproj
-# Copy everything else and build
+
+COPY Mechty-learn-backend/Mechty-learn-backend/*.csproj Mechty-learn-backend/Mechty-learn-backend/
+RUN dotnet restore Mechty-learn-backend/Mechty-learn-backend/Mechty-learn-backend.csproj
+
 COPY . .
-WORKDIR /src/Mechty-learn-backend
+WORKDIR /src/Mechty-learn-backend/Mechty-learn-backend
+
+RUN dotnet build -c Release
+
 RUN dotnet publish -c Release -o /app
 
 # Build runtime image
-FROM mcr.microsoft.com/dotnet/sdk:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build-env /app .
 
