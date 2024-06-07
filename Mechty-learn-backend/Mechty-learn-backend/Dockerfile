@@ -17,7 +17,7 @@ COPY --from=build-env /app .
 
 RUN dotnet tool install --global dotnet-ef --version 8.0
 ENV PATH="$PATH:/root/.dotnet/tools"
-ENV ASPNETCORE_URLS=http://+:5019
+ENV ASPNETCORE_URLS=http://+:10000
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 
 RUN echo $PATH
