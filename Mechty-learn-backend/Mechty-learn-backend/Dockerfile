@@ -1,6 +1,7 @@
 ﻿
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
+EXPOSE 5019
 
 COPY *.csproj ./
 RUN dotnet restore
@@ -16,6 +17,8 @@ COPY --from=build-env /app .
 
 RUN dotnet tool install --global dotnet-ef --version 8.0
 ENV PATH="$PATH:/root/.dotnet/tools"
+ENV ASPNETCORE_URLS=http://+:5019
+ENV DOTNET_RUNNING_IN_CONTAINER=true
 
 RUN echo $PATH
 RUN ls -la /root/.dotnet/tools
