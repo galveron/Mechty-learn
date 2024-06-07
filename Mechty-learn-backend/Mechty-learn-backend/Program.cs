@@ -35,6 +35,7 @@ builder.Services.AddScoped<AuthenticationSeeder>();
 builder.Services.AddTransient<IProgressRepository, ProgressRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>((options) =>
     options.UseNpgsql(connectionString));
+
 Console.WriteLine(connectionString);
 
 AddIdentity();
@@ -46,6 +47,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 //app.UseHttpsRedirection();
 app.MapControllers();
 
@@ -67,7 +69,8 @@ catch(Exception ex)
 
 try
 {
-    app.Run();
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "5019"; // Use Render's PORT or default to 10000
+    app.Run($"http://*:{port}");
 }
 catch (Exception ex)
 {
