@@ -20,9 +20,4 @@ ENV PATH="$PATH:/root/.dotnet/tools"
 ENV ASPNETCORE_URLS=http://+:10000
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 
-RUN echo $PATH
-RUN ls -la /root/.dotnet/tools
-RUN dotnet --info
-
-EXPOSE 10000
 ENTRYPOINT ["sh", "-c", "dotnet ef database update", "dotnet Mechty-learn-backend.dll"]
