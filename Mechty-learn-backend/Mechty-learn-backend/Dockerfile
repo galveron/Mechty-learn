@@ -20,4 +20,4 @@ ENV PATH="$PATH:/root/.dotnet/tools"
 ENV ASPNETCORE_URLS=http://+:10000
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 
-ENTRYPOINT ["sh", "-c", "dotnet ef database update", "dotnet Mechty-learn-backend.dll"]
+ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Mechty-learn-backend.dll"]
