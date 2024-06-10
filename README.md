@@ -56,13 +56,20 @@ Key Features:
 ### Built With
 
 * [![Asp.netCore][Asp.netCore]][Asp.netCore-url]
+* [![Postgresql][Postgresql]][Postgresql-url]
 * [![Aws][Aws]][Aws-url]
-* [![Azure][Azure]][Azure-url]
+
 * [![React][React.js]][React-url]
-* [![Three][Three.js]][Three.js-url]
-* [![Sass][Sass]][Sass-url]
 * [![TypeScript][TypeScript]][TypeScript-url]
+* [![Sass][Sass]][Sass-url]
+
+* [![Three][Three.js]][Three.js-url]
 * [![Socket.io][Socket.io]][Socket.io-url]
+
+Deployed for demo with:
+* [![GithubActions][GithubActions]][GithubActions-url]
+* [![Docker][Docker]][Docker-url]
+* [![Render][Render]][Render-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,7 +85,7 @@ This project is in progress. Here are the steps what I already done:
 * Create a good structure on frontend
 * Create Home page and Profile page structure
 
-* I am currently working on deploying the app. 
+* Deploying the app for demo 
 
 If you are interested in what I am currently working on, you can check the open issues: 
 [https://github.com/galveron/mechty-learn/issues](https://github.com/galveron/mechty-learn/issues)
@@ -90,7 +97,9 @@ If you are interested in what I am currently working on, you can check the open 
 <a name="app"></a>
 ### Check my app
 
-Open this link in your browser: https://mechty-learn-frontend.onrender.com/
+Open this links in your browser to check pages: 
+  - https://mechty-learn-frontend.onrender.com/
+  - https://mechty-learn-frontend.onrender.com/profile
 
    WARNING!
    This project is still in development. I created only the structure, buttons and functions are still not working.
@@ -124,8 +133,8 @@ Project Link: [https://github.com/galveron/mechty-learn](https://github.com/galv
 [Asp.netCore-url]: https://dotnet.microsoft.com/en-us/apps/aspnet
 [Aws]:https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white
 [Aws-url]:https://aws.amazon.com/?nc2=h_lg
-[Azure]:https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white
-[Azure-url]: https://azure.microsoft.com/en-us/free/search/?ef_id=_k_Cj0KCQjw_qexBhCoARIsAFgBlesj4zlpsF7CRNapEj4KFOyaQQQK_h9AJYF9m3mRFpVk_VZLzcc9OXcaAu0YEALw_wcB_k_&OCID=AIDcmmip7xznjm_SEM__k_Cj0KCQjw_qexBhCoARIsAFgBlesj4zlpsF7CRNapEj4KFOyaQQQK_h9AJYF9m3mRFpVk_VZLzcc9OXcaAu0YEALw_wcB_k_&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBlesj4zlpsF7CRNapEj4KFOyaQQQK_h9AJYF9m3mRFpVk_VZLzcc9OXcaAu0YEALw_wcB
+[Postgresql]:https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgresql-url]: https://www.postgresql.org
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Three.js]: https://img.shields.io/badge/THREE.js-000000?style=for-the-badge&logo=threedotjs&logoColor=61DAFB
@@ -136,3 +145,9 @@ Project Link: [https://github.com/galveron/mechty-learn](https://github.com/galv
 [Sass-url]: https://sass-lang.com/
 [Socket.io]: https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white
 [Socket.io-url]: https://socket.io/
+[Render]: https://img.shields.io/badge/Render.com-46E3B7?style=for-the-badge&logo=render&logoColor=white
+[Render-url]: https://render.com/
+[Docker]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+[GithubActions]: https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
+[GithubActions-url]: https://github.com/features/actions
