@@ -11,8 +11,9 @@ RUN dotnet publish -c Release -o out
 
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0
-WORKDIR /app/out
+WORKDIR /app
 COPY --from=build-env /app/out .
+WORKDIR /app/out
 
 RUN dotnet tool install --global dotnet-ef --version 8.0
 ENV PATH="$PATH:/root/.dotnet/tools"
