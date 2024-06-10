@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
       - name: Build and push backend image
         env:
-          REGISTRY: docker.io
+          REGISTRY: ${{ env.REGISTRY }}
           IMAGE_NAME: mechty_backend
           TAG: latest
         run: |
@@ -43,7 +43,7 @@ jobs:
           docker push veronsun/$IMAGE_NAME:$TAG
       - name: Build and push frontend image
         env:
-          REGISTRY: docker.io
+          REGISTRY: ${{ env.REGISTRY }}
           IMAGE_NAME: mechty_frontend
           TAG: latest
           DOTNET_BACKEND_URL: ${{ secrets.DOTNET_BACKEND_URL}}
