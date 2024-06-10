@@ -39,8 +39,8 @@ jobs:
           IMAGE_NAME: mechty_backend
           TAG: latest
         run: |
-          docker build -t $REGISTRY/galveron/$IMAGE_NAME ./Mechty-learn-backend/Mechty-learn-backend
-          docker push veronsun/$IMAGE_NAME
+          docker build -t $REGISTRY/veronsun/$IMAGE_NAME:$TAG ./Mechty-learn-backend/Mechty-learn-backend
+          docker push veronsun/$IMAGE_NAME:$TAG
       - name: Build and push frontend image
         env:
           REGISTRY: docker.io
