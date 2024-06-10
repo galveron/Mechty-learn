@@ -31,8 +31,8 @@ jobs:
         uses: docker/login-action@v3.1.0
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ USERNAME }}
-          password: ${{ PASSWORD }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
       - name: Build and push backend image
         env:
           REGISTRY: docker.io
