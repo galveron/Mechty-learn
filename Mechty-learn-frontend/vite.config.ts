@@ -9,18 +9,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://mechty-learn.onrender.com',
+        target: 'https://mechty-backend.onrender.com',
         changeOrigin: true,
       },
     }
-  },
-  preview: {
-    proxy: {
-      '/api': {
-        target: 'https://mechty-learn.onrender.com',
-        changeOrigin: true,
-      },
-    },
-    port: 5000
-  },
+  }
 })
