@@ -19,7 +19,7 @@ on:
         required: true
 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: docker.io
   
 jobs:
   build-and-push-images:
@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.TOKEN }}
       - name: Build and push backend image
         env:
-          REGISTRY: ghcr.io
+          REGISTRY: docker.io
           IMAGE_NAME: backend
           TAG: latest
         run: |
