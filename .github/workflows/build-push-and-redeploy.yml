@@ -39,8 +39,8 @@ jobs:
           IMAGE_NAME: mechty_backend
           TAG: latest
         run: |
-          docker build -t $REGISTRY/galveron/$IMAGE_NAME:$TAG ./Mechty-learn-backend/Mechty-learn-backend
-          docker push veronsun/$IMAGE_NAME:$TAG
+          docker build -t $REGISTRY/galveron/$IMAGE_NAME ./Mechty-learn-backend/Mechty-learn-backend
+          docker push veronsun/$IMAGE_NAME
       - name: Build and push frontend image
         env:
           REGISTRY: docker.io
@@ -48,8 +48,8 @@ jobs:
           TAG: latest
           DOTNET_BACKEND_URL: ${{ secrets.DOTNET_BACKEND_URL}}
         run: |
-          docker build -t veronsun/mechty_frontend:$TAG ./Mechty-learn-frontend
-          docker push veronsun/$IMAGE_NAME:$TAG
+          docker build -t veronsun/$IMAGE_NAME ./Mechty-learn-frontend
+          docker push veronsun/$IMAGE_NAME
 
   redeploy-on-render:
     runs-on: ubuntu-latest
