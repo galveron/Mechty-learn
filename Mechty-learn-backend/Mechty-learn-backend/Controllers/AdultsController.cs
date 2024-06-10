@@ -30,6 +30,7 @@ public class AdultsController : ControllerBase
         var adult = await _adultsRepository.GetAdultById(id);
 
         var demoAdult = new Adult{UserName = "userName", Email = "email@email.com"};
+        Console.WriteLine("Ez itt a teszt: " + adult.TestString);
 
         return adult == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adult);
     }
