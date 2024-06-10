@@ -19,7 +19,7 @@ on:
         required: true
 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: docker.io
   
 jobs:
   build-and-push-images:
@@ -31,25 +31,25 @@ jobs:
         uses: docker/login-action@v3.1.0
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.TOKEN }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
       - name: Build and push backend image
         env:
-          REGISTRY: ghcr.io
-          IMAGE_NAME: backend
+          REGISTRY: docker.io
+          IMAGE_NAME: mechty_backend
           TAG: latest
         run: |
-          docker build -t $REGISTRY/galveron/$IMAGE_NAME:$TAG ./Mechty-learn-backend/Mechty-learn-backend
-          docker push $REGISTRY/galveron/$IMAGE_NAME:$TAG
+          docker build -t $REGISTRY/veronsun/$IMAGE_NAME:$TAG ./Mechty-learn-backend/Mechty-learn-backend
+          docker push veronsun/$IMAGE_NAME:$TAG
       - name: Build and push frontend image
         env:
-          REGISTRY: ghcr.io
-          IMAGE_NAME: frontend
+          REGISTRY: docker.io
+          IMAGE_NAME: mechty_frontend
           TAG: latest
           DOTNET_BACKEND_URL: ${{ secrets.DOTNET_BACKEND_URL}}
         run: |
-          docker build -t $REGISTRY/galveron/$IMAGE_NAME:$TAG ./Mechty-learn-frontend
-          docker push $REGISTRY/galveron/$IMAGE_NAME:$TAG
+          docker build -t veronsun/$IMAGE_NAME ./Mechty-learn-frontend
+          docker push veronsun/$IMAGE_NAME
 
   redeploy-on-render:
     runs-on: ubuntu-latest
