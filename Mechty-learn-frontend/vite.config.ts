@@ -20,6 +20,7 @@ export default defineConfig({
         target: 'https://mechty-learn.onrender.com',
         changeOrigin: true,
       },
-    }
+    },
+    port: 5000
   },
 })
