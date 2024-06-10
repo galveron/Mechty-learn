@@ -6,5 +6,4 @@ public class Adult : IdentityUser
 {
     public ICollection<Kid> Kids { get; init; } = new List<Kid>();
     public int? Adults3DModelId { get; init; }
-    public string TestString = "Teststring";
 }
