@@ -69,7 +69,7 @@ catch(Exception ex)
 
 try
 {
-    var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "5019";
     app.Run($"http://*:{port}");
 }
 catch (Exception ex)
