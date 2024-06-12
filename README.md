@@ -98,8 +98,8 @@ If you are interested in what I am currently working on, you can check the open 
 ### Check my app
 
 Open this links in your browser to check pages: 
-  - https://mechty-learn-frontend.onrender.com/
-  - https://mechty-learn-frontend.onrender.com/profile
+  - https://mechty-frontend.onrender.com/
+  - https://mechty-frontend.onrender.com/profile
 
    WARNING!
    This project is still in development. I created only the structure, buttons and functions are still not working.
