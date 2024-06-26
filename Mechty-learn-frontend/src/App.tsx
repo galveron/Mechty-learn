@@ -4,52 +4,53 @@ import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import Layout, { User } from './Layout'
 import './scss/index.scss'
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const [user, setUser] = useState<User>()
   const [userId, setUserId] = useState<string>("")
 
-  async function fetchUser(id: string) {
-    let url = `/api/Adults/GetAdultById?id=${id}`
+  // async function fetchUser(id: string) {
+  //   let url = `/api/Adults/GetAdultById?id=${id}`
 
-    try {
-      const res = await fetch(url,
-        {
-          method: "GET",
-          headers: { 'Content-type': 'application/json' }
-        })
+  //   try {
+  //     const res = await fetch(url,
+  //       {
+  //         method: "GET",
+  //         headers: { 'Content-type': 'application/json' }
+  //       })
 
-      if (!res.ok) {
-        throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
-      }
+  //     if (!res.ok) {
+  //       throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
+  //     }
 
-      const data = await res.json()
+  //     const data = await res.json()
 
-      const newUser: User = {
-        userEmail: data.email,
-        userName: data.userName,
-        userId: id,
-        userProgress: 0
-      }
+  //     const newUser: User = {
+  //       userEmail: data.email,
+  //       userName: data.userName,
+  //       userId: id,
+  //       userProgress: 0
+  //     }
 
-      return newUser
-    }
-    catch (error) {
-      console.error("Error fetching user:", error)
-      throw Error("Faild to fetch")
-    }
-  }
+  //     return newUser
+  //   }
+  //   catch (error) {
+  //     console.error("Error fetching user:", error)
+  //     throw Error("Faild to fetch")
+  //   }
+  // }
 
-  useEffect(() => {
-    setUserId("c515b5aa-e707-49e2-81a4-e356f55a1f5b")
-  }, [])
+  // useEffect(() => {
+  //   setUserId("c515b5aa-e707-49e2-81a4-e356f55a1f5b")
+  // }, [])
 
-  useEffect(() => {
-    if (userId.length) {
-      fetchUser(userId)
-        .then(user => setUser(user))
-    }
-  }, [userId])
+  // useEffect(() => {
+  //   if (userId.length) {
+  //     fetchUser(userId)
+  //       .then(user => setUser(user))
+  //   }
+  // }, [userId])
 
   const router = createBrowserRouter([
     {
