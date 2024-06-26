@@ -21,6 +21,18 @@ public class AdultsController : ControllerBase
     {
         var newAdultId = await _adultsRepository.AddAdult(userName, email, password, adultIconId);
 
+        
+        
+        return newAdultId == null ? Problem("Error in AC 01. User name or email is already taken") : Ok(newAdultId);
+    }
+    
+    [HttpPost("Login")]
+    public async Task<ActionResult> Login(string userName, string email, string password, int adultIconId)
+    {
+        var newAdultId = await _adultsRepository.AddAdult(userName, email, password, adultIconId);
+
+        
+        
         return newAdultId == null ? Problem("Error in AC 01. User name or email is already taken") : Ok(newAdultId);
     }
 
@@ -30,5 +42,13 @@ public class AdultsController : ControllerBase
         var adult = await _adultsRepository.GetAdultById(id);
 
         return adult == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adult);
+    }
+    
+    [HttpGet("GetAllAdult")]
+    public async Task<ActionResult<Adult>> GetAllAdult()
+    {
+        var adults = await _adultsRepository.GetAllAdult();
+
+        return adults == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adults);
     }
 }

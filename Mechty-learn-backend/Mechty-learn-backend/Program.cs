@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Auth0.AspNetCore.Authentication;
 using Mechty_learn_backend.Data;
 using Mechty_learn_backend.Models;
 using Mechty_learn_backend.Repositories;
@@ -12,15 +13,21 @@ var config =
         .Build();
 
 var builder = WebApplication.CreateBuilder(args);
+
 var connectionString = config["ConnectionString"] ?? Environment.GetEnvironmentVariable("CONNECTIONSTRING");
+var domain = config["Domain"] ?? Environment.GetEnvironmentVariable("DOMAIN");
+var clientId = config["ClientId"] ?? Environment.GetEnvironmentVariable("CLIENTID");
 
 ConfigureSwagger();
-
+builder.Services.AddAuth0WebAppAuthentication(options =>
+{
+    options.Domain = domain;
+    options.ClientId = clientId;
+});
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IKidsRepository, KidsRepository>();
@@ -48,8 +55,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
+app.UseCookiePolicy();
+
 //app.UseHttpsRedirection();
 app.MapControllers();
+app.UseAuthentication();
+app.UseAuthorization();
 
 using var scope = app.Services.CreateScope();
 

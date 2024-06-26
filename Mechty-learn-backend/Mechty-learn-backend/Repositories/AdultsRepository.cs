@@ -60,4 +60,10 @@ public class AdultsRepository : IAdultsRepository
         var adult = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == adultName);
         return adult;
     }
+    
+    public async Task<List<Adult>?> GetAllAdult()
+    {
+        var adults = _userManager.Users.ToList();
+        return adults;
+    }
 }
