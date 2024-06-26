@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
-import Layout, { User } from './Layout'
+import Layout from './Layout'//, { User } from './Layout'
 import './scss/index.scss'
-import { useAuth0 } from "@auth0/auth0-react";
+//import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const [user, setUser] = useState<User>()
-  const [userId, setUserId] = useState<string>("")
+  //const [user, setUser] = useState<User>()
+  //const [userId, setUserId] = useState<string>("")
 
   // async function fetchUser(id: string) {
   //   let url = `/api/Adults/GetAdultById?id=${id}`
@@ -56,10 +56,10 @@ function App() {
     {
       path: '/',
       element: <Layout
-        userName={user?.userName}
-        userId={user?.userId}
-        userEmail={user?.userEmail}
-        userProgress={user?.userProgress} />,
+        userName="valaki"//{user?.userName}
+        userId="1"//{user?.userId}
+        userEmail="email"//{user?.userEmail}
+        userProgress={2} />,//{user?.userProgress} />,
       //errorElement: <ErrorPage />,
       children: [
         {
@@ -73,10 +73,10 @@ function App() {
         {
           path: '/profile',
           element: <Profile
-            userName={user?.userName}
-            userId={user?.userId}
-            userEmail={user?.userEmail}
-            userProgress={user?.userProgress} />
+            userName="valaki"//{user?.userName}
+            userId="1"//{user?.userId}
+            userEmail="email"//{user?.userEmail}
+            userProgress={2} />//{user?.userProgress} />,
         }
       ]
     }
