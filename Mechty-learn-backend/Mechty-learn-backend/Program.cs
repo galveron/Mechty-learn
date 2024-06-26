@@ -60,6 +60,7 @@ try
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     context.Database.EnsureCreated();
+    context.Database.Migrate();
 }
 catch(Exception ex)
 {
