@@ -31,4 +31,12 @@ public class AdultsController : ControllerBase
 
         return adult == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adult);
     }
+    
+    [HttpGet("GetAllAdult")]
+    public async Task<ActionResult<Adult>> GetAllAdult()
+    {
+        var adults = await _adultsRepository.GetAllAdult();
+
+        return adults == null ? Problem("Error in AC 02.", statusCode:418) : Ok(adults);
+    }
 }
