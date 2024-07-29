@@ -41,7 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Mechty Learn is an engaging web application designed to introduce children to the exciting world of mechanics and vehicles. Built with ASP.NET Core, Identity Framework, AWS, and React, Mechty Learn offers a modern and interactive learning experience for kids aged 6-12.
+Mechty Learn will be an engaging web application designed to introduce children to the exciting world of mechanics and vehicles. Built with ASP.NET Core, Identity Framework, AWS, and React, Mechty Learn will offer a modern and interactive learning experience for kids aged 6-12.
 
 Key Features:
 
@@ -76,7 +76,7 @@ Deployed for demo with:
 <a name="progress"></a>
 ### Progress
 
-This project is in progress. Here are the steps what I already done:
+This project is on hold for now. Here are the steps what I already done:
 
 * Set up backend
 * Create main controller and repository methods
